@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Aprendendo JavaScript</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <h1>Aprendendo JavaScript</h1>
+    <p id="texto"></p>
+    <p id="função"></p>
+   <button ondblclick="clicar2x()">Clique aqui </button> 
+   
+   <div id="teste" onmouseout="voltarCor()" onmouseover="mudarCor()" onmousemove="addTexto()" style = "margin: auto auto; width: 80%; height: 300px; background:blue; margin-top: 20px"></div>
+
+    <input style="padding: 15px; font-size:10px; margin-top: 20px; width: 500px", type = "text", placeholder="Digite aqui" value="texto pré-definido" onchange="mudar()" id="campo" onkeydown="Pressionada()"> 
+
+    <select id="itens" style="padding: 10px; margin:20px" onblur="mudar()">
+        <option value="1">Valor 1</option>
+        <option value="2">Valor 2</option>
+        <option value="3">Valor 3</option>
+        <option value="4">Valor 4</option>
+    </select>
+
+    <script src="js/index.js"></script>
+</body>
+</html>
