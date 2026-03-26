@@ -198,4 +198,88 @@ pessoa.length; //Retorna o valor de itens presentes na Array
 console.log(pessoa[pessoa.length - 1]) //Retorna o último valor da lista. Já que começa em zero, e nessa conta, não se considera isto, subtrai 1
 pessoa.push("brasileiro") //Adiciona item
 
-alert(Array.isArray(pessoa)) //Método para verificar se realmente é uma variável
+// alert(Array.isArray(pessoa)) //Método para verificar se realmente é uma variável
+
+pessoa.push("Array") // Adição de item a Array
+
+pessoa.pop() // Remoção de último item
+
+pessoa.shift() // Remoção de primeiro item da lista. Muda as posições de todos os itens já que um é alterado
+
+delete pessoa[0]; //Remove o item 0, porém não altera a ordem. O primeiro item só vai ser undefined
+
+// pessoa.splice(1, 0, "item adicionado1", "item adicionado 2") -> esse método pega a posição que você quer adicionar os itens, nesse caso, 1, quantos você quer excluir, nesse caso, nenhum, e quais você quer adicionar
+
+// document.getElementById("teste").innerHTML = pessoa.join(" * ") -> join troca os "separadores" dentro da array
+
+const lista1 = ["arroz", "feijão", "macarrão"]
+const lista2 = ["suco", "água com gás", "refrigerante"]
+const lista3 = ["frango", "carne", "peixe"]
+
+const superlista = lista1.concat(lista2, lista3); //junta duas listas
+
+//document.getElementById("teste").innerHTML = superlista.join(" - ")
+
+const jogadores = [ "Neymar", "Messi", "Maradona", "Pelé", "Cr7", "Vampeta", "Cauã"]
+const craques = jogadores.slice(2) // Pega os valores da lista a partir de certo ponto. Neste caso, do item 2. "Fatia" os itens
+
+const muitobons = jogadores.slice(2, 6) // -> "Fatia" a array de um ponto a outro. Primeiro valor, onde começa, e o segundo, onde termina. Porém, ele não vai até o valor requerido como último, vai até um atrás. Ou seja, até o 5
+
+const playersOrdem = jogadores.sort(); // -> Jogadores em ordem alfabetica
+muitobons.reverse() // -> Coloca a ordem ao contrário
+
+const numeros = [1, 10, 35, 7, 23, 115, 2]
+numeros.sort(function(a, b) { return a - b}) // -> Números em ordem crescente
+numeros.sort(function(a, b){return b -a }) // -> Numeros em ordem decrescente
+
+function MaiorNumero(array){
+    return Math.max.apply(null, array); // -> Pegar o maior número
+}
+
+function MenorNumero(array){
+    return Math.min.apply(null, array) // -> Pegar o menor número
+}
+
+const maior20 = numeros.filter(filtragem)
+
+function filtragem(value, index, array){
+    return value> 20           // -> Filtragem de números. Nesse caso, números maiores que 20
+}
+
+// document.getElementById("teste").innerHTML = maior20
+
+//                         IF E ELSE
+var interruptor = "off";
+if (interruptor == "on"){
+    console.log("A lampada está ligada")
+} else{
+    console.log("A lampada está desligada")
+}
+
+var hora = new Date().getHours(); // -> Pega a hora do dia
+
+
+if (hora <= 12){
+    console.log("Bom dia")
+} else if ( hora < 18){
+    console.log("Boa tarde")
+} else if (hora > 18){
+    console.log("Boa noite")
+}
+
+
+let p = document.getElementById("teste")
+function Verificar(){
+    let nome = document.getElementById("nome").value;
+    if (nome == "" || nome == null){
+        p.innerHTML = "O campo não pode ser vazio"
+        p.style.color = "red"
+    } else {
+        p.innerHTML = "Perfeito! Campo preenchido corretamente!"
+        p.style.color = "gold"
+    }
+}
+
+
+
+

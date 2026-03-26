@@ -18,3 +18,8 @@ button:hover{
     font-weight: bold;
     transition: transform 0.3s ease
 }
+input{
+    border-radius: 50px;
+    padding: 15px;
+    margin: 20px;
+}
