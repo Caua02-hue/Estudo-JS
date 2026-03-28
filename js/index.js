@@ -271,7 +271,7 @@ if (hora <= 12){
 let p = document.getElementById("teste")
 function Verificar(){
     let nome = document.getElementById("nome").value;
-    if (nome == "" || nome == null){
+    if (nome == "" || nome == null || nome == " "){
         p.innerHTML = "O campo não pode ser vazio"
         p.style.color = "red"
     } else {
@@ -281,5 +281,91 @@ function Verificar(){
 }
 
 
+//                SWITCH
 
+// Switch é, basicamente, uma condicional em que o padrão é comparar como igual. É mais "limpo" que condicional (já que não precisa especificar que a comparação é de igualdade), porém muito mais limitado. A comparação é de === (estritamente igual)
+
+function verificaCOr(){
+    let cor = document.getElementById("cor").value
+
+    cor = cor.toLowerCase(); // Faz com que o navegador interprete o que foi escrito como minúsculo. Assim, caso o case (ou outra condicional) receba um texto em maiúsculo, ele converte pra minúsculo e o navegador interpreta. Sem ele, caso o usuário escreva diferente do que foi definido, mesmo que uma letra em maiúsculo/minúsculo, o navegador vai interpretar diferente 
+
+    switch (cor){
+        case "azul":
+            document.body.style.backgroundColor = "blue"
+            break;
+        
+        case "vermelho":
+            document.body.style.backgroundColor = "red"
+            break;
+        
+        case "gold":
+            document.body.style.backgroundColor = "gold"
+            break;
+        case "roxo":
+            document.body.style.backgroundColor = "purple"
+            break;
+        default:
+            alert("Não há opção de cor "+cor)
+    } 
+}
+
+let MudarCor = document.getElementById("MudarCor")
+
+MudarCor.addEventListener("click", verificaCOr)
+
+function DiaSemana(){
+    var dia = new Date().getDay(); //Comando para que a variável receba o dia da semana em forma de array (domingo é zero, segunda é 1 e etc)
+    switch (dia){
+        case 0:
+            alert("Hoje é domingo")
+            break;
+        case 1:
+            alert("Hoje é segunda")
+            break;
+        case 2:
+            alert("Hoje é terça")
+            break;
+        case 3:
+            alert("Hoje é quarta")
+            break;
+        case 4:
+            alert("Hoje é quinta")
+            break;
+        case 5:
+            alert("Hoje é sexta")
+            break;
+        case 6:
+            alert("Hoje é sábado")
+            break
+    }
+
+}
+
+let dia = document.getElementById("diaDaSemana")
+dia.addEventListener("click", DiaSemana)
+
+//                    Laço de repetição - FOR
+
+for (let i=0; i<10001; i++){ // Primeiro valor é o valor inicial, nesse caso, 0. O segundo é a condição, nesse caso, enquanto i for menor que 10001. Já a terceira acrescenta 1 a ele enquanto a condição for verdadeira.. Ou seja: I é zero, e enquanto for menor que 10001, acrescenta 1 ao valor I (0, 1, 2, 3. Até 10000, que é o maior número que ele pode chegar até ser menor que 10001)
+
+    // document.getElementById("repeticao").innerHTML += i +", "
+
+
+     // += i faz com que ele vá juntando os valores. Ou seja: 0 + 1 = 1, 1 + 1 =2, 2 + 1 + 3, e por assim vai
+}
+
+var ano = new Date().getFullYear(); // Atribuir o ano atual à variável ano. Vai ser usada pra que o código nn precise ser atualizado, já que automaticamente pega o ano atual
+
+for ( ano ; ano>=1900; ano--){
+    document.getElementById("ano").innerHTML += "<option value='"+ ano + "'>" + ano + "</option>"
+}
+
+const carros = ["Gol", "Fusca", "Brasília", "Del Rey", "Chevette"];
+
+var tamanho = carros.length; //Pegar o "tamanho" (quantidade de itens) da Array
+
+for (let i = 0; i<tamanho; i++){  //Altera o I pra ir até o último valor da lista, acrescentando 1 ao valor da lista pra que mude de item. Então, usasse I como valor que quer pegar da lista (mostra o item 0, dps acrescenta 1 e I vai ter o valor de 1, mostrando o 1, dps acrescenta 1 e vira 2, mostrando o item 2)
+    document.getElementById("garagem").innerHTML += carros[i] + " - " 
+}
 
