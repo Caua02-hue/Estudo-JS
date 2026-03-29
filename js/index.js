@@ -369,3 +369,74 @@ for (let i = 0; i<tamanho; i++){  //Altera o I pra ir até o último valor da li
     document.getElementById("garagem").innerHTML += carros[i] + " - " 
 }
 
+
+//               EVENTOS DE TEMPO SetTimeOut e SetInterval
+
+// SetTimeOut -> Executa uma função, depois de esperar um número especificado em milissegundos.
+
+// SetInterval -> É o mesmo que SetTimeOut(), mas repete a execução da função continuamente.
+
+const time = document.getElementById("tempo")
+
+ function ativarContagem(){
+
+    //setTimeout(function, tempo em milissegundos)
+
+    
+/*
+    time.innerHTML = "A contagem começou!"
+
+    tempo = setTimeout(function(){
+
+        alert("A contagem acabou")
+
+    }, 5000)*/
+
+    tempo = setInterval (function() {
+        var cronometro = time.innerHTML;
+        var soma = parseInt(cronometro) - 1 //parseInt transforma texto (string) em número
+
+        if (soma === 0){
+            time.innerHTML = "Tempo esgotado"
+            pararContagem()
+        } else{
+            time.innerHTML = soma
+        }
+
+    }, 1000)
+} 
+
+
+
+function pararContagem(){
+    // clearTimeout(tempo) -> clearTimeOut serve para fazer com que a contagem feita com setTimeOut pare
+
+    clearInterval(tempo)
+
+    alert("A contagem parou")
+} 
+
+
+//    CLASSES 
+
+class Carro{  // É um consenso começar classes com letra maiúscula
+    constructor(v1, v2, v3){    // "Molde" a ser usado para criar objetos
+        this.marca = v1;
+        this.modelo = v2;
+        this.ano = v3;
+    }
+    buzina(){      // Método ("ação")
+        return this.modelo + " buzinou: BIIII"
+    }
+}
+
+const uno = new Carro("Fiat", "Uno", 2001);
+const gol = new Carro("Volkswagen", "Gol", 2013)
+
+
+console.log(gol);
+
+gol.ano = 2014
+
+console.log(gol)
+
