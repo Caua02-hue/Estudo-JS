@@ -440,3 +440,59 @@ gol.ano = 2014
 
 console.log(gol)
 
+//              Manipulação de datas
+
+let data = new Date();  // variável data definida como a data atual
+
+console.log(data)
+
+let anoAtual = data.getFullYear(); // Pegar o ano atual
+
+let mes = data.getMonth(); // Pegar o mês atual (com número de 0  11). Ent ele vai ser numerado como um a menos que o atual 
+console.log(mes)
+
+const mesesAno = ["Janeiro", "Fevereiro", "Março", "Abril", "Maio", "Junho", "Julho", "Agosto", "Setembro", "Outubro", "Novembro", "Dezembro"]
+
+let mesEscrito = mesesAno[data.getMonth()]; // Forma de mostrar o mês escrito
+
+let diaMes = data.getDate(); // Pegar o dia atual
+
+let diaSemana = data.getDay() // Pegar o dia da semana. Começando em 0
+
+console.log(diaSemana)
+
+let horario = data.getHours() // Pegar a hora 
+
+let minutos = data.getMinutes() // Pegar os minutos (0 a 59)
+console.log(minutos)
+
+let segundos = data.getSeconds() // Pegar segundos (0 a 59)
+
+let milissegundos = data.getMilliseconds()
+console.log(milissegundos)
+
+// let dataBr = data.toLocaleString("pt-Br")  Pegar a data no formato brasileiro (dia/mês/ano),com hora
+let dataBr = data.toLocaleString("pt-br", {dateStyle : 'short'})
+console.log(dataBr)
+
+// Comparar datas - Maior ou menor (útil para vencimentos, por exemplo)
+var hoje = new Date();
+var vencimento = new Date(2027, 0, 15); // ano, mês (começa em 0), dia
+
+if (hoje>vencimento){
+    console.log("Sua conta está vencida")
+} else{
+    console.log("Sua conta ainda não venceu. Tudo certo")
+}
+
+// Diferença entre duas datas em dias
+
+var dataInicial = new Date();
+var dataFinal = new Date(2026, 11, 31);
+
+var diferencaTempo = dataFinal.getTime() - dataInicial.getTime(); // getTime() transforma em milissegundos
+
+var diferencaDias = Math.ceil(diferencaTempo / (24 * 60 * 60 * 1000)); // Transforma a diferença de datas, que esteja em milissegundos, em dias;
+
+console.log(diferencaDias + " dias")
+
