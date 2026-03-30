@@ -496,3 +496,59 @@ var diferencaDias = Math.ceil(diferencaTempo / (24 * 60 * 60 * 1000)); // Transf
 
 console.log(diferencaDias + " dias")
 
+
+//                 JSON
+
+// JSON.parse() -> Converte texto no padrão JSON em objetos 
+
+// JSON.stringify() - Converte objetos em texto padrão JSON
+
+const Automovel = {
+    marca : "Fiat",
+    modelo : "Uno",
+    ano : 2001
+}
+
+// document.getElementById("area").innerHTML = Automovel -> Não aparece os valores. O navegador nn consegue interpretar corretamente um objeto 
+
+/* let texto = JSON.stringify(Automovel) // Converter para texto
+
+document.getElementById("area").innerHTML = texto // Inserir texto no html
+
+let objeto = JSON.parse(texto) // Converter texto em objeto
+
+console.log(texto.modelo) //-> Não vai mostrar o paramêtro modelo, pois ele agora é um texto, não um objeto.
+
+console.log(objeto) // Exibir o valor */
+
+// JSON é usada para pegar valores de API. Um exemplo é a API do viacep. Para trabalhar com os valores dados a ele, tem de transformar em um objeto
+
+// const ajax = new XMLHttpRequest(); ->  Método para requisitar algo a um site. Pedir pra pegar informações dele
+
+// ajax.open("GET", 'https://viacep.com.br/ws/01001000/json/') // -> Pegar as informações desse site
+// ajax.send() // -> Enviar solicitação
+
+/* ajax.onload = function (){
+    document.getElementById("area").innerHTML = this.responseText // -> O elemento HTML vai exibir a resposta que recebeu
+    let objeto = JSON.parse(this.responseText);
+    alert(objeto.ddd)
+} // -> Quando carregar as informações desse site, executar essa função. */
+
+function buscarCEP(){
+    let cep = document.getElementById("CEP").value;
+    const endereco = new XMLHttpRequest();
+    endereco.open("GET", 'https://viacep.com.br/ws/'+cep+'/json/')
+    endereco.send()
+
+    endereco.onload = function(){
+        let obj = JSON.parse(this.responseText)
+        let logradouro = obj.logradouro;
+        let cidade = obj.localidade
+        let estado = obj.uf
+
+        document.getElementById("exibirCEP").innerHTML = "logradouro: " + logradouro + "<br>Cidade: "+ cidade + "<br>Estado: "+ estado
+        // document.getElementById("exibirCEP").innerHTML = this.responseText;
+    }
+
+
+}
