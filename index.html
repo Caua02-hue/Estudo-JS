@@ -1,61 +1,24 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="pt-br">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Aprendendo JavaScript</title>
     <link rel="stylesheet" href="style.css">
+    
+    <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined" rel="stylesheet">
+    <title>LISTA DE TAREFAS</title>
 </head>
 <body>
-    <h1>Aprendendo JavaScript</h1>
-    <p id="texto"></p>
-    <p id="função"></p>
-   <button ondblclick="clicar2x()">Clique aqui </button> 
-   
-   <div id="teste" onmouseout="voltarCor()" onmouseover="mudarCor()" onmousemove="addTexto()" style = "margin: auto auto; width: 80%; height: 300px; background:blue; margin-top: 20px"></div>
+    <h1>Lista de tarefas</h1>
 
-   <div>
-    <input type = "text", placeholder="Digite aqui" value="texto pré-definido" onchange="mudar()" id="campo" onkeydown="Pressionada()"> 
-
-    <select id="itens" onblur="mudar()">
-        <option value="1">Valor 1</option>
-        <option value="2">Valor 2</option>
-        <option value="3">Valor 3</option>
-        <option value="4">Valor 4</option>
-    </select>
-
-    <input type="text" id="nome" placeholder="Digite seu nome">
-    <button onclick="Verificar()">Verificar</button>
-
-    <input type="text" placeholder="Digite uma cor" id="cor">
-    <button id="MudarCor">
-        Mudar cor de fundo
-    </button>
-
-    <button id="diaDaSemana">Verificar dia da semana</button>
-
-    <p id="repeticao"></p> 
-
-     <select id ="ano">
-        <option selected disabled> Selecione o ano </option>
-     </select>
-
-     <p id="garagem"></p>
-
-    </div>
-
-    <h1>Controle de tempo</h1>
-    <h2 id="tempo">10</h2>
-    <button class="start" onclick="ativarContagem()">Ativar contagem</button>
-    <button class="stop" onclick="pararContagem()">Parar contagem</button>
-     
-    <pre id="area">
+    <header>
+    <input type="text" placeholder="Digite sua tarefa..." id="addTarefa">
+    <button class="adicionar" id="add" >Adicionar</button>
+    </header>
+    <main id="lista">
         
-    </pre>
-
-    <input type="text" id="CEP" placeholder="Digite seu CEP...">
-    <button id="buscar" onclick="buscarCEP()"> Buscar</button>
-    <p id="exibirCEP"></p>
+    </main>
     <script src="js/index.js"></script>
+    
 </body>
 </html>
