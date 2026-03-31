@@ -1,23 +1,23 @@
 <!DOCTYPE html>
-<html lang="pt-br">
+<html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="style.css">
-    
-    <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined" rel="stylesheet">
-    <title>LISTA DE TAREFAS</title>
+   <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+   <link href="https://fonts.googleapis.com/css2?family=Poppins&display=swap" rel="stylesheet">
+    <title>Lista de tarefas</title>
 </head>
-<body>
-    <h1>Lista de tarefas</h1>
+<body class="text-center bg-">
+    <h1 class=" m-10 text-5xl font-[Bebas_Neue] font-bold">Lista de tarefas</h1>
+    <div class="flex justify-center gap-15">
+        <input type="text" placeholder="Digite sua tarefa" class="border p-2 rounded-xl w-3xl pl-5 shadow-xl shadow-black" id="tarefa">
+        <button class="bg-[#27F23F] p-5 rounded-3xl px-10 font-bold transition transition-transform duration-300 hover:scale-120 shadow-xl shadow-black" id="adicionar">Adicionar</button>
+    </div>
 
-    <header>
-    <input type="text" placeholder="Digite sua tarefa..." id="addTarefa">
-    <button class="adicionar" id="add" >Adicionar</button>
-    </header>
-    <main id="lista">
-        
-    </main>
+    <div class="flex flex-col  m-10 shadow-black shadow-lg rounded-3xl py-5 font-bold " id="conteudo">
+    
+    </div>
+    
     <script src="js/index.js"></script>
     
 </body>
