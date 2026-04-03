@@ -1,58 +1,60 @@
-let inputTarefa = document.getElementById("tarefa")
-let cont = 0
-let btnAdd = document.getElementById("adicionar")
-let lista = document.getElementById("conteudo")
+function adicionar(){
+    let nomeAlimento = document.getElementById("nomeAlimento").value
 
-function addTarefa(){
-    cont++ // incrementa valor de cont
-    let valorInput = inputTarefa.value // Pega valor do input
-     // 
-    if (valorInput !== null && valorInput !== "" && valorInput !== undefined){
-    lista.innerHTML += `<div class="flex justify-between w-7xl items-center shadow-black shadow-md rounded-3xl py-7 px-8 font-bold m-5" id = "${cont}">
-    <input type="checkbox" onchange="concluir(${cont})" class="cursor-pointer transition transition-transform duration-300 hover:scale-120" >
-        <p class="font-bold" id="texto-${cont}">${valorInput}</p>
-        <button class="bg-red-600 rounded-3xl px-7 py-3 shadow-black shadow-md transition transition-transform duration-300 hover:scale-120 cursor-pointer" id="deletar" onclick="deletar(${cont})">X</button>
-        </div>`
+    let cal = Number(document.getElementById("caloriasAlimento").value)
+
+    let prot = Number(document.getElementById("proteinasAlimento").value) 
+
+    let carbo = Number(document.getElementById("carboidratosAlimento").value)
+
+    let gord = Number(document.getElementById("gordurasAlimento").value)
+
+    let tipo = document.getElementById("tipoAlimento").value
+
+    let cardRefeicao = document.getElementById("card"+tipo)
+
+    if (!cardRefeicao){
+        cardRefeicao = document.createElement("div")
+        cardRefeicao.id = "card"+tipo
+        cardRefeicao.className = "border rounded-xl shadow-black shadow-2xl text-xl font-bold pb-20 text-center"
+
+        const titulo = document.createElement("h1")
+        titulo.className = "text-3xl bg-yellow-500 p-10 rounded-xl"
+        titulo.textContent = tipo
+
+        const corpoCard = document.createElement("div")
+        corpoCard.id = "corpo"+tipo
+        corpoCard.className = "p-4"
+        
+
+        cardRefeicao.appendChild(titulo);
+        cardRefeicao.appendChild(corpoCard)
+
+        document.getElementById("listaRef").appendChild(cardRefeicao)
+
     }
-    inputTarefa.value = ""
-    inputTarefa.focus();
-    salvar()
-}
+        const divItem = document.createElement("div")
+        divItem.className = "flex justify-between items-center bg-gray-100 p-3 rounded border-l-4 border-yellow-500"
+        divItem.innerHTML = `
+        <p class= "text-2xl text-black">${nomeAlimento}<p><br>
+        <div class="text-sm text-gray-600">
+        <p  >Calorias: ${cal}kcal</p  >
+        <p  >Proteinas: ${prot}g</p   >
+        <p  >Carboidratos: ${carbo}g</p   >
+        <p  >Gorduras: ${gord}g</p    >
+        </div>
+        `
 
-function deletar(id){
-    var tarefa = document.getElementById(id)
-    tarefa.remove();
-    salvar()
-}
+    const btnDel = document.createElement("button")
+    btnDel.textContent = "Deletar"
+    btnDel.className = "bg-red-600 text-white p-2 rounded-full cursor-pointer ml-4"
 
-inputTarefa.addEventListener("keyup", function(event){
-    if (event.key === "Enter"){
-        addTarefa()
+    btnDel.onclick = function (){
+        divItem.remove()
     }
-})
-
-function concluir(id){
-    let texto = document.getElementById(`texto-${id}`)
-    texto.classList.toggle("line-through")
-    texto.classList.toggle("text-gray-500")
-    texto.classList.toggle("normal")
-    let elemento = document.getElementById(id)
-    let lista_tarefas = document.getElementById("conteudo")
-    elemento.classList.toggle("bg-green-200")
-    lista_tarefas.appendChild(elemento);
-    salvar()
+    divItem.appendChild(btnDel)
+    document.getElementById("corpo"+tipo).appendChild(divItem)
 }
 
-btnAdd.addEventListener("click", addTarefa)
-
-function salvar(){
-    localStorage.setItem("conteudo_lista", lista.innerHTML)
-}
-
-function carregar(){
-    lista.innerHTML = localStorage.getItem("conteudo_lista") || ""
-}
-
-window.onload = function (){
-    carregar();
-}
+const btnAdd = document.getElementById("add")
+btnAdd.addEventListener("click", adicionar)
