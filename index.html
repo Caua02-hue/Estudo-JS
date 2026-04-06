@@ -9,46 +9,45 @@
     <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200&icon_names=home" />
 </head>
 <body>
-  <div class="flex  m-10 justify-between">
+  <div class="flex justify-center m-10">
 <h1 class="text-4xl font-bold text-[#1E293B] bg-white py-2 px-10 border border-black rounded-xl text-shadow-lg  shadow-xl shadow-black">Minha WatchList</h1>
-<button class="border p-3 rounded-xl font-bold transform transition duration-300 hover:scale-115 cursor-pointer bg-[#1E40AF] text-white ">+ Adicionar título</button>
 </div>
-<div class="flex ml-20 gap-5 text-[#1E293B] font-bold">
+<div class="flex gap-5 text-[#1E293B] font-bold justify-center">
 <span>X títulos | </span>
 <span>X assistidos | </span>
 <span>X pendentes</span>
 </div>
 
 <nav class="flex border p-5 m-10 justify-around rounded-xl bg-[#FFFFFF] text-[#1E293B] font-bold">
-  <input type="text" name="" id="" placeholder="Título" class="pr-60 pl-3 py-3 rounded-lg ">
-  <select class="pr-20 pl-3 rounded-lg cursor-pointer "> 
-    <option value="Genero" class="font-bold">Gênero</option>
-    <option value="Ficcao" class="font-bold">Ficção</option>
-    <option value="Acao" class="font-bold">Ação</option>
+  <input type="text" name="" placeholder="Título" class="pr-60 pl-3 py-3 rounded-lg " id="tituloFilme">
+  <select class="pr-20 pl-3 rounded-lg cursor-pointer " id="selectGenero"> 
+    <option value="Gênero" class="font-bold">Gênero</option>
+    <option value="Ficção" class="font-bold">Ficção</option>
+    <option value="Ação" class="font-bold">Ação</option>
     <option value="Terror" class="font-bold">Terror</option>
-    <option value="Romance" >Romance</option>
+    <option value="Romance" class="font-bold" >Romance</option>
   </select>
  
-    <select name="" id="" class="flex gap-3 text-2xl border px-10 items-center rounded-lg text-[#1E293B] font-bold">
+    <select class="flex gap-3 text-2xl border px-10 items-center rounded-lg text-[#1E293B] font-bold" id="addNota">
       <option value="1">★</option>
       <option value="2">★★</option>
       <option value="3">★★★</option>
       <option value="4">★★★★</option>
-      <option value="4">★★★★★</option>
+      <option value="5">★★★★★</option>
     </select>
 
-  <button class="border px-10 rounded-xl transform transition duration-300 hover:scale-115 cursor-pointer font-bold bg-[#1E40AF]  text-white"> Adicionar</button>
+  <button class="border px-10 rounded-xl transform transition duration-300 hover:scale-115 cursor-pointer font-bold bg-[#1E40AF]  text-white" id="addLista"> Adicionar</button>
 </nav>
 
 <div class=" flex mx-10 gap-10 text-[#1E293B] font-bold">
-  <button class="border p-2 rounded-lg transform transition duration-300 hover:scale-115 cursor-pointer px-10 hover:bg-[#1E40AF] hover:text-white bg-white">Todos</button>
-  <button class="border p-2 rounded-lg transform transition duration-300 hover:scale-115 cursor-pointer px-10 hover:bg-[#1E40AF] hover:text-white bg-white">Pendente</button>
-  <button class="border p-2 rounded-lg transform transition duration-300 hover:scale-115 cursor-pointer px-10 hover:bg-[#1E40AF] hover:text-white bg-white">Assistidos</button>
-  <button class="border p-2 rounded-lg transform transition duration-300 hover:scale-115 cursor-pointer px-10 hover:bg-[#1E40AF] hover:text-white bg-white">Ficção</button>
-  <button class="border p-2 rounded-lg transform transition duration-300 hover:scale-115 cursor-pointer px-10 hover:bg-[#1E40AF] hover:text-white bg-white">Ação</button>
-  <button class="border p-2 rounded-lg transform transition duration-300 hover:scale-115 cursor-pointer px-10 hover:bg-[#1E40AF] hover:text-white bg-white">Terror</button>
-  <button class="border p-2 rounded-lg transform transition duration-300 hover:scale-115 cursor-pointer px-10 hover:bg-[#1E40AF] hover:text-white bg-white">Romance</button>
-  <select name="" id="" class="flex gap-3 text-2xl border text-center rounded-lg text-[#1E293B] bg-white">
+  <button class="border p-2 rounded-lg transform transition duration-300 hover:scale-115 cursor-pointer px-10 hover:bg-[#1E40AF] hover:text-white bg-white" id="filtrarTodos">Todos</button>
+  <button class="border p-2 rounded-lg transform transition duration-300 hover:scale-115 cursor-pointer px-10 hover:bg-[#1E40AF] hover:text-white bg-white" id="filtrarPendente">Pendente</button>
+  <button class="border p-2 rounded-lg transform transition duration-300 hover:scale-115 cursor-pointer px-10 hover:bg-[#1E40AF] hover:text-white bg-white" id="filtrarAssistidos">Assistidos</button>
+  <button class="border p-2 rounded-lg transform transition duration-300 hover:scale-115 cursor-pointer px-10 hover:bg-[#1E40AF] hover:text-white bg-white" id="filtficcao">Ficção</button>
+  <button class="border p-2 rounded-lg transform transition duration-300 hover:scale-115 cursor-pointer px-10 hover:bg-[#1E40AF] hover:text-white bg-white" id="filtAcao">Ação</button>
+  <button class="border p-2 rounded-lg transform transition duration-300 hover:scale-115 cursor-pointer px-10 hover:bg-[#1E40AF] hover:text-white bg-white" id="filtTerror">Terror</button>
+  <button class="border p-2 rounded-lg transform transition duration-300 hover:scale-115 cursor-pointer px-10 hover:bg-[#1E40AF] hover:text-white bg-white" id="filtRomance">Romance</button>
+  <select name="" id="" class="flex gap-3 text-2xl border text-center rounded-lg text-[#1E293B] bg-white" id="filStars">
       <option value="1">★</option>
       <option value="2">★★</option>
       <option value="3">★★★</option>
@@ -59,22 +58,12 @@
 </div>
 
 
-<input placeholder="Buscar por título..." class="m-10 w-7xl py-3 pl-4 rounded-lg bg-[#FFFFFF] text-[#1E293B]">
+<input placeholder="Buscar por título..." class="m-10 w-7xl py-3 pl-4 rounded-lg bg-[#FFFFFF] text-[#1E293B]" id="buscaTitulo">
 
-<section class="flex justify-center text-[#1E293B] ">
-<div class="flex border justify-around px-20 py-7 font-bold w-7xl  bg-[#FFFFFF] rounded-xl">
-  <div class="flex gap-50 text-4xl">
-    <span>Filme</span>
-    <span>Gênero</span>
-  </div>
+<section class="flex-col gap-4 justify-center text-[#1E293B] mx-10" id="listaFilmes">
 
-  <div class="flex gap-10">
-    <p class="text-3xl">★★★★★</p>
-    <button class="border p-2 rounded-lg transform transition duration-300 hover:scale-115 cursor-pointer px-10 hover:bg-[#10B981] hover:text-white">Marcar como assistido</button>
-    <button class="border p-2 rounded-lg transform transition duration-300 hover:scale-115 cursor-pointer px-10 hover:bg-[#EF4444] hover:text-white">X</button>
-  </div>
 
-</div>
+
 </section>
 
   <script src="js/index.js"></script>

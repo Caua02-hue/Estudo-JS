@@ -1,60 +1,72 @@
-function adicionar(){
-    let nomeAlimento = document.getElementById("nomeAlimento").value
+let tituloFilme = document.getElementById("tituloFilme")
 
-    let cal = Number(document.getElementById("caloriasAlimento").value)
+let selectGenero = document.getElementById("selectGenero")
 
-    let prot = Number(document.getElementById("proteinasAlimento").value) 
+let addNota = document.getElementById("addNota")
 
-    let carbo = Number(document.getElementById("carboidratosAlimento").value)
+let btnAddLista = document.getElementById("addLista")
 
-    let gord = Number(document.getElementById("gordurasAlimento").value)
+let filtrarTodos = document.getElementById("filtrarTodos")
 
-    let tipo = document.getElementById("tipoAlimento").value
+let filtrarPendente = document.getElementById("filtrarPendente")
 
-    let cardRefeicao = document.getElementById("card"+tipo)
+let filtrarAssistidos = document.getElementById("filtrarAssistidos")
 
-    if (!cardRefeicao){
-        cardRefeicao = document.createElement("div")
-        cardRefeicao.id = "card"+tipo
-        cardRefeicao.className = "border rounded-xl shadow-black shadow-2xl text-xl font-bold pb-20 text-center"
+let filtficcao = document.getElementById("filtficcao")
 
-        const titulo = document.createElement("h1")
-        titulo.className = "text-3xl bg-yellow-500 p-10 rounded-xl"
-        titulo.textContent = tipo
+let filtAcao = document.getElementById("filtAcao")
 
-        const corpoCard = document.createElement("div")
-        corpoCard.id = "corpo"+tipo
-        corpoCard.className = "p-4"
-        
+let filtTerror = document.getElementById("filtTerror")
 
-        cardRefeicao.appendChild(titulo);
-        cardRefeicao.appendChild(corpoCard)
+let filtRomance = document.getElementById("filRomance")
 
-        document.getElementById("listaRef").appendChild(cardRefeicao)
+let filtStars = document.getElementById("filtStars")
 
-    }
-        const divItem = document.createElement("div")
-        divItem.className = "flex justify-between items-center bg-gray-100 p-3 rounded border-l-4 border-yellow-500"
-        divItem.innerHTML = `
-        <p class= "text-2xl text-black">${nomeAlimento}<p><br>
-        <div class="text-sm text-gray-600">
-        <p  >Calorias: ${cal}kcal</p  >
-        <p  >Proteinas: ${prot}g</p   >
-        <p  >Carboidratos: ${carbo}g</p   >
-        <p  >Gorduras: ${gord}g</p    >
-        </div>
-        `
+let buscaTitulo = document.getElementById("buscaTitulo")
 
-    const btnDel = document.createElement("button")
-    btnDel.textContent = "Deletar"
-    btnDel.className = "bg-red-600 text-white p-2 rounded-full cursor-pointer ml-4"
+let btnAssistido = document.getElementById("assistido")
 
-    btnDel.onclick = function (){
-        divItem.remove()
-    }
-    divItem.appendChild(btnDel)
-    document.getElementById("corpo"+tipo).appendChild(divItem)
+let cont = 0
+
+let filmes = []
+
+
+function render(){
+    listaFilmes.innerHTML = filmes.map(filme =>{
+        return `<div class="flex border justify-around px-20 py-7 font-bold w-full  bg-[#FFFFFF] rounded-xl">
+  <div class="flex gap-50 text-4xl">
+    <span>${filme.titulo}</span>
+    <span>${filme.genero}</span>
+  </div>
+
+  <div class="flex gap-10">
+    <p class="text-3xl">${filme.nota}</p>
+    <button class="border p-2 rounded-lg transform transition duration-300 hover:scale-115 cursor-pointer px-10 hover:bg-[#10B981] hover:text-white" onclick="concluir(${filme.id})">Marcar como assistido</button>
+    <button class="border p-2 rounded-lg transform transition duration-300 hover:scale-115 cursor-pointer px-10 hover:bg-[#EF4444] hover:text-white" onclick="deletar(${filme.id})">X</button>
+  </div>
+  </div>`
+    }).join("")
 }
 
-const btnAdd = document.getElementById("add")
-btnAdd.addEventListener("click", adicionar)
+function add(){
+    cont += 1
+    const novoFilme = {
+        id : cont,
+        titulo : tituloFilme.value,
+        genero : selectGenero.value,
+        nota : addNota.value,
+        assistido : false
+    }
+    filmes.push(novoFilme)
+    render()
+    tituloFilme.value = ""
+}
+
+btnAddLista.addEventListener("click", add)
+
+function deletar(a){
+    filmes = filmes.filter(filme => filme.id !== a)
+    render()
+}
+
+
