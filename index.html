@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en" class="min-h-screen bg-gray-200">
+<html lang="en" class="min-h-screen bg-gray-400">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -12,11 +12,7 @@
   <div class="flex justify-center m-10">
 <h1 class="text-4xl font-bold text-[#1E293B] bg-white py-2 px-10 border border-black rounded-xl text-shadow-lg  shadow-xl shadow-black">Minha WatchList</h1>
 </div>
-<div class="flex gap-5 text-[#1E293B] font-bold justify-center">
-<span>X títulos | </span>
-<span>X assistidos | </span>
-<span>X pendentes</span>
-</div>
+
 
 <nav class="flex border p-5 m-10 justify-around rounded-xl bg-[#FFFFFF] text-[#1E293B] font-bold">
   <input type="text" name="" placeholder="Título" class="pr-60 pl-3 py-3 rounded-lg " id="tituloFilme">
@@ -29,30 +25,29 @@
   </select>
  
     <select class="flex gap-3 text-2xl border px-10 items-center rounded-lg text-[#1E293B] font-bold" id="addNota">
-      <option value="1">★</option>
-      <option value="2">★★</option>
-      <option value="3">★★★</option>
-      <option value="4">★★★★</option>
-      <option value="5">★★★★★</option>
+      <option value="★">★</option>
+      <option value="★★">★★</option>
+      <option value="★★★">★★★</option>
+      <option value="★★★★">★★★★</option>
+      <option value="★★★★★">★★★★★</option>
     </select>
 
   <button class="border px-10 rounded-xl transform transition duration-300 hover:scale-115 cursor-pointer font-bold bg-[#1E40AF]  text-white" id="addLista"> Adicionar</button>
 </nav>
 
-<div class=" flex mx-10 gap-10 text-[#1E293B] font-bold">
+<div class=" flex mx-10 gap-10 text-[#1E293B] font-bold justify-around">
   <button class="border p-2 rounded-lg transform transition duration-300 hover:scale-115 cursor-pointer px-10 hover:bg-[#1E40AF] hover:text-white bg-white" id="filtrarTodos">Todos</button>
-  <button class="border p-2 rounded-lg transform transition duration-300 hover:scale-115 cursor-pointer px-10 hover:bg-[#1E40AF] hover:text-white bg-white" id="filtrarPendente">Pendente</button>
   <button class="border p-2 rounded-lg transform transition duration-300 hover:scale-115 cursor-pointer px-10 hover:bg-[#1E40AF] hover:text-white bg-white" id="filtrarAssistidos">Assistidos</button>
   <button class="border p-2 rounded-lg transform transition duration-300 hover:scale-115 cursor-pointer px-10 hover:bg-[#1E40AF] hover:text-white bg-white" id="filtficcao">Ficção</button>
   <button class="border p-2 rounded-lg transform transition duration-300 hover:scale-115 cursor-pointer px-10 hover:bg-[#1E40AF] hover:text-white bg-white" id="filtAcao">Ação</button>
   <button class="border p-2 rounded-lg transform transition duration-300 hover:scale-115 cursor-pointer px-10 hover:bg-[#1E40AF] hover:text-white bg-white" id="filtTerror">Terror</button>
   <button class="border p-2 rounded-lg transform transition duration-300 hover:scale-115 cursor-pointer px-10 hover:bg-[#1E40AF] hover:text-white bg-white" id="filtRomance">Romance</button>
   <select name="" id="" class="flex gap-3 text-2xl border text-center rounded-lg text-[#1E293B] bg-white" id="filStars">
-      <option value="1">★</option>
-      <option value="2">★★</option>
-      <option value="3">★★★</option>
-      <option value="4">★★★★</option>
-      <option value="4">★★★★★</option>
+      <option value="★">★</option>
+      <option value="★★">★★</option>
+      <option value="★★★">★★★</option>
+      <option value="★★★★">★★★★</option>
+      <option value="★★★★★">★★★★★</option>
     </select>
 
 </div>
@@ -60,7 +55,7 @@
 
 <input placeholder="Buscar por título..." class="m-10 w-7xl py-3 pl-4 rounded-lg bg-[#FFFFFF] text-[#1E293B]" id="buscaTitulo">
 
-<section class="flex-col gap-4 justify-center text-[#1E293B] mx-10" id="listaFilmes">
+<section class="flex-col gap-5 justify-center text-[#1E293B] mx-10" id="listaFilmes">
 
 
 
