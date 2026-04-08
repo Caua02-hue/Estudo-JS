@@ -1,65 +1,96 @@
 <!DOCTYPE html>
-<html lang="en" class="min-h-screen bg-gray-400">
+<html lang="en" class="min-h-screen bg-[#EAE7DC]">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
     <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
     <link href="https://cdn.jsdelivr.net/npm/daisyui@5" rel="stylesheet" type="text/css" />
-    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200&icon_names=home" />
+    <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined" rel="stylesheet" />
+    
 </head>
 <body>
-  <div class="flex justify-center m-10">
-<h1 class="text-4xl font-bold text-[#1E293B] bg-white py-2 px-10 border border-black rounded-xl text-shadow-lg  shadow-xl shadow-black">Minha WatchList</h1>
-</div>
+  <nav class="bg-[#3D2B1F] flex justify-between text-3xl px-5 font-bold px-20">
+    <div class="flex gap-10 text-[#FFF]">
+    <button class="transform transition duration-300 hover:scale-110 cursor-pointer hover:underline">Menu</button>
+    <button class="transform transition duration-300 hover:scale-110 cursor-pointer hover:underline">Sobre Nós</button>
+    <button class="transform transition duration-300 hover:scale-110 cursor-pointer hover:underline">Localização</button>
+    </div>
+    <img src="img/cantina do zé.png" class="w-80 h-40 justify-center" alt="">
+    <div class="flex gap-10 text-[#FFF]">
+    <button class="transform transition duration-300 hover:scale-140 cursor-pointer">
+      <span class="material-symbols-outlined">search</span>
+    </button>
+    <button class="transform transition duration-300 hover:scale-140 cursor-pointer">
+      <span class="material-symbols-outlined">shopping_cart</span>
+    </button>
+    </div>
+  </nav>
 
+  <section class="flex justify-around text-2xl m-7 font-bold">
+    <button class="border px-7 py-2 bg rounded-full transform transition duration-300 hover:scale-115 cursor-pointer hover:bg-[#632A19] hover:text-[#F5F5DC]">Entradas</button>
+    <button class="border px-7 py-2 bg rounded-full transform transition duration-300 hover:scale-115 cursor-pointer hover:bg-[#632A19] hover:text-[#F5F5DC]">Massas</button>
+    <button class="border px-7 py-2 bg rounded-full transform transition duration-300 hover:scale-115 cursor-pointer hover:bg-[#632A19] hover:text-[#F5F5DC]">Carnes</button>
+    <button class="border px-7 py-2 bg rounded-full transform transition duration-300 hover:scale-115 cursor-pointer hover:bg-[#632A19] hover:text-[#F5F5DC]">Sobremesas</button>
+    <button class="border px-7 py-2 bg rounded-full transform transition duration-300 hover:scale-115 cursor-pointer hover:bg-[#632A19] hover:text-[#F5F5DC]">Bebidas</button>
+  </section>
 
-<nav class="flex border p-5 m-10 justify-around rounded-xl bg-[#FFFFFF] text-[#1E293B] font-bold">
-  <input type="text" name="" placeholder="Título" class="pr-60 pl-3 py-3 rounded-lg " id="tituloFilme">
-  <select class="pr-20 pl-3 rounded-lg cursor-pointer " id="selectGenero"> 
-    <option value="Gênero" class="font-bold">Gênero</option>
-    <option value="Ficção" class="font-bold">Ficção</option>
-    <option value="Ação" class="font-bold">Ação</option>
-    <option value="Terror" class="font-bold">Terror</option>
-    <option value="Romance" class="font-bold" >Romance</option>
-  </select>
- 
-    <select class="flex gap-3 text-2xl border px-10 items-center rounded-lg text-[#1E293B] font-bold" id="addNota">
-      <option value="★">★</option>
-      <option value="★★">★★</option>
-      <option value="★★★">★★★</option>
-      <option value="★★★★">★★★★</option>
-      <option value="★★★★★">★★★★★</option>
-    </select>
-
-  <button class="border px-10 rounded-xl transform transition duration-300 hover:scale-115 cursor-pointer font-bold bg-[#1E40AF]  text-white" id="addLista"> Adicionar</button>
-</nav>
-
-<div class=" flex mx-10 gap-10 text-[#1E293B] font-bold justify-around">
-  <button class="border p-2 rounded-lg transform transition duration-300 hover:scale-115 cursor-pointer px-10 hover:bg-[#1E40AF] hover:text-white bg-white" id="filtrarTodos">Todos</button>
-  <button class="border p-2 rounded-lg transform transition duration-300 hover:scale-115 cursor-pointer px-10 hover:bg-[#1E40AF] hover:text-white bg-white" id="filtrarAssistidos">Assistidos</button>
-  <button class="border p-2 rounded-lg transform transition duration-300 hover:scale-115 cursor-pointer px-10 hover:bg-[#1E40AF] hover:text-white bg-white" id="filtficcao">Ficção</button>
-  <button class="border p-2 rounded-lg transform transition duration-300 hover:scale-115 cursor-pointer px-10 hover:bg-[#1E40AF] hover:text-white bg-white" id="filtAcao">Ação</button>
-  <button class="border p-2 rounded-lg transform transition duration-300 hover:scale-115 cursor-pointer px-10 hover:bg-[#1E40AF] hover:text-white bg-white" id="filtTerror">Terror</button>
-  <button class="border p-2 rounded-lg transform transition duration-300 hover:scale-115 cursor-pointer px-10 hover:bg-[#1E40AF] hover:text-white bg-white" id="filtRomance">Romance</button>
-  <select name="" id="" class="flex gap-3 text-2xl border text-center rounded-lg text-[#1E293B] bg-white" id="filStars">
-      <option value="★">★</option>
-      <option value="★★">★★</option>
-      <option value="★★★">★★★</option>
-      <option value="★★★★">★★★★</option>
-      <option value="★★★★★">★★★★★</option>
-    </select>
-
-</div>
-
-
-<input placeholder="Buscar por título..." class="m-10 w-7xl py-3 pl-4 rounded-lg bg-[#FFFFFF] text-[#1E293B]" id="buscaTitulo">
-
-<section class="flex-col gap-5 justify-center text-[#1E293B] mx-10" id="listaFilmes">
-
-
-
-</section>
+  <section class="flex flex-wrap mx-auto gap-8 justify-evenly mt-20">
+    <div class="border roundex-xl w-90 rounded-xl">
+      <img src="img/lasanha-bolonhesa-na-pressao.jpg" alt="" class="w-88 h-auto">
+      <h1 class="text-2xl font-bold text-center mt-5">Lasanha à Bolonhesa</h1>
+      <p class="max-w-80 p-2 text-center  ">Lasanha à Bolonhesa de carne, feita na pressão, com recheio de três tipos de queijo, massa feita pela própria casa, e temperado com molho de tomate, orégano, salsa, pimenta do reino e sal a gosto.</p>
+      <div class="flex justify-around text-3xl px-3 mb-5 items-center">
+      <span class="font-bold">R$ 45,90</span>
+      <button class="border p-3 rounded-2xl bg-[#FF9F1C] font-bold transform transition duration-300 hover:scale-110 cursor-pointer hover:bg-[#632A19] ">Adicionar</button>
+      </div>
+    </div>
+    <div class="border roundex-xl w-90 rounded-xl">
+      <img src="img/lasanha-bolonhesa-na-pressao.jpg" alt="" class="w-88 h-auto">
+      <h1 class="text-2xl font-bold text-center mt-5">Lasanha à Bolonhesa</h1>
+      <p class="max-w-80 p-2 text-center  ">Lasanha à Bolonhesa de carne, feita na pressão, com recheio de três tipos de queijo, massa feita pela própria casa, e temperado com molho de tomate, orégano, salsa, pimenta do reino e sal a gosto.</p>
+      <div class="flex justify-around text-3xl px-3 mb-5 items-center">
+      <span class="font-bold">R$ 45,90</span>
+      <button class="border p-3 rounded-2xl bg-[#FF9F1C] font-bold transform transition duration-300 hover:scale-110 cursor-pointer hover:bg-[] ">Adicionar</button>
+      </div>
+    </div>
+    <div class="border roundex-xl w-90 rounded-xl">
+      <img src="img/lasanha-bolonhesa-na-pressao.jpg" alt="" class="w-88 h-auto">
+      <h1 class="text-2xl font-bold text-center mt-5">Lasanha à Bolonhesa</h1>
+      <p class="max-w-80 p-2 text-center  ">Lasanha à Bolonhesa de carne, feita na pressão, com recheio de três tipos de queijo, massa feita pela própria casa, e temperado com molho de tomate, orégano, salsa, pimenta do reino e sal a gosto.</p>
+      <div class="flex justify-around text-3xl px-3 mb-5 items-center">
+      <span class="font-bold">R$ 45,90</span>
+      <button class="border p-3 rounded-2xl bg-[#FF9F1C] font-bold transform transition duration-300 hover:scale-110 cursor-pointer hover:bg-[] ">Adicionar</button>
+      </div>
+    </div>
+    <div class="border roundex-xl w-90 rounded-xl">
+      <img src="img/lasanha-bolonhesa-na-pressao.jpg" alt="" class="w-88 h-auto">
+      <h1 class="text-2xl font-bold text-center mt-5">Lasanha à Bolonhesa</h1>
+      <p class="max-w-80 p-2 text-center  ">Lasanha à Bolonhesa de carne, feita na pressão, com recheio de três tipos de queijo, massa feita pela própria casa, e temperado com molho de tomate, orégano, salsa, pimenta do reino e sal a gosto.</p>
+      <div class="flex justify-around text-3xl px-3 mb-5 items-center">
+      <span class="font-bold">R$ 45,90</span>
+      <button class="border p-3 rounded-2xl bg-[#FF9F1C] font-bold transform transition duration-300 hover:scale-110 cursor-pointer hover:bg-[] ">Adicionar</button>
+      </div>
+    </div>
+    <div class="border roundex-xl w-90 rounded-xl">
+      <img src="img/lasanha-bolonhesa-na-pressao.jpg" alt="" class="w-88 h-auto">
+      <h1 class="text-2xl font-bold text-center mt-5">Lasanha à Bolonhesa</h1>
+      <p class="max-w-80 p-2 text-center  ">Lasanha à Bolonhesa de carne, feita na pressão, com recheio de três tipos de queijo, massa feita pela própria casa, e temperado com molho de tomate, orégano, salsa, pimenta do reino e sal a gosto.</p>
+      <div class="flex justify-around text-3xl px-3 mb-5 items-center">
+      <span class="font-bold">R$ 45,90</span>
+      <button class="border p-3 rounded-2xl bg-[#FF9F1C] font-bold transform transition duration-300 hover:scale-110 cursor-pointer hover:bg-[] ">Adicionar</button>
+      </div>
+    </div>
+    <div class="border roundex-xl w-90 rounded-xl">
+      <img src="img/lasanha-bolonhesa-na-pressao.jpg" alt="" class="w-88 h-auto">
+      <h1 class="text-2xl font-bold text-center mt-5">Lasanha à Bolonhesa</h1>
+      <p class="max-w-80 p-2 text-center  ">Lasanha à Bolonhesa de carne, feita na pressão, com recheio de três tipos de queijo, massa feita pela própria casa, e temperado com molho de tomate, orégano, salsa, pimenta do reino e sal a gosto.</p>
+      <div class="flex justify-around text-3xl px-3 mb-5 items-center">
+      <span class="font-bold">R$ 45,90</span>
+      <button class="border p-3 rounded-2xl bg-[#FF9F1C] font-bold transform transition duration-300 hover:scale-110 cursor-pointer hover:bg-[] ">Adicionar</button>
+      </div>
+    </div>
+  </section>
 
   <script src="js/index.js"></script>
 </body>
