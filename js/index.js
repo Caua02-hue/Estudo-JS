@@ -312,7 +312,7 @@ function addCarrinho(id){
 
 function mostrarAviso(){
     const divAviso = document.createElement('div')
-    divAviso.className = 'flex fixed top-5 right-5 z-50 font-bold justify-center text-center text-3xl p-10 border m-5 w-2xl bg-white rounded-2xl'
+    divAviso.className = 'flex fixed top-5 right-5 z-50 font-bold justify-center text-center text-3xl p-10 border m-5 w-xl bg-white rounded-2xl'
     const aviso = document.createElement('p')
     aviso.textContent = "O item foi adicionado ao carrinho"
     divAviso.appendChild(aviso)
@@ -323,3 +323,79 @@ function mostrarAviso(){
         divAviso.remove();
     }, 3000)
 }
+
+let btnCarrinho = document.getElementById("carrinho")
+
+let tiposPratos = document.getElementById("categorias")
+
+function abrirCarrinho(){
+
+    const menu = document.getElementById("menu")
+
+    const containerCarrinho = document.getElementById("container-carrinho")
+    
+    menu.classList.add('hidden')
+    containerCarrinho.classList.remove('hidden')
+
+    if (tiposPratos) tiposPratos.classList.remove('hidden')
+
+    containerCarrinho.innerHTML = ''
+
+   carrinho.map((item) => {
+    let card = document.createElement('div')
+    card.className = 'p-5 flex justify-between items-center bg-white m-4 shadow-xl rounded-xl border-l-8 border-[#FF9F1C]'
+
+    card.innerHTML = `<img src="${item.img}" class="h-32 w-32 object-cover rounded-lg">
+            <div class="flex-1 px-10">
+                <p class="text-2xl font-bold">${item.nome}</p>
+                <p class="text-gray-500">Quantidade: 1x</p>
+            </div>
+            <span class="text-3xl font-bold mr-10">R$ ${item.preco.toFixed(2)}</span>
+            <button class="bg-red-600 text-white px-5 py-2 rounded-lg font-bold cursor-pointer transform transition duration-300 hover:scale-115" >X</button>`
+
+            containerCarrinho.appendChild(card)
+
+    
+   })
+let valorTotal = 0
+   carrinho.forEach((item)=>{
+    valorTotal += item.preco
+
+    
+   })
+
+   if (carrinho.length>0){
+    let divPagar = document.createElement('div')
+    divPagar.className = 'text-center p-5 bg-orange-500 w-3xl rounded-2xl mx-auto transform transition duration-300 hover:scale-110 cursor-pointer'
+
+    divPagar.innerHTML = `
+    <h2 class=" text-4xl font-bold text-white">Total a pagar: </h2>
+    <span class="text-4xl font-extrabold text-white"> ${valorTotal.toFixed(2)} </span>`
+
+    containerCarrinho.appendChild(divPagar)
+   }
+
+
+    
+
+   
+
+
+   
+   
+
+   let btnVoltar = document.createElement('button')
+   btnVoltar.textContent = 'Voltar'
+   btnVoltar.className = 'flex mx-auto mt-10 bg-[#3D2B1F] text-white p-4 rounded-xl cursor-pointer'
+   btnVoltar.onclick = ()=>{
+    menu.classList.remove('hidden');
+    containerCarrinho.classList.add('hidden')
+    if (tiposPratos) tiposPratos.classList.remove('hidden')
+   }
+
+    containerCarrinho.appendChild(btnVoltar)
+
+}
+
+btnCarrinho.addEventListener('click', abrirCarrinho)
+

@@ -10,6 +10,8 @@
     
 </head>
 <body>
+
+  <main id="conteudoPrincipal">
   
   <nav class="bg-[#3D2B1F] flex justify-between text-3xl px-5 font-bold px-20">
     <div class="flex gap-10 text-[#FFF]">
@@ -23,12 +25,13 @@
       <span class="material-symbols-outlined">search</span>
     </button>
     <button class="transform transition duration-300 hover:scale-140 cursor-pointer">
-      <span class="material-symbols-outlined">shopping_cart</span>
+      <span class="material-symbols-outlined" id="carrinho">shopping_cart</span>
     </button>
     </div>
   </nav>
 
-  <section class="flex justify-around text-2xl m-7 font-bold">
+  <section class="flex justify-around text-2xl m-7 font-bold" >
+    
     <button class="border px-7 py-2 bg rounded-full transform transition duration-300 hover:scale-115 cursor-pointer hover:bg-[#632A19] hover:text-[#F5F5DC]" id="entradas">Entradas</button>
     <button class="border px-7 py-2 bg rounded-full transform transition duration-300 hover:scale-115 cursor-pointer hover:bg-[#632A19] hover:text-[#F5F5DC]" id="massas">Massas</button>
     <button class="border px-7 py-2 bg rounded-full transform transition duration-300 hover:scale-115 cursor-pointer hover:bg-[#632A19] hover:text-[#F5F5DC]" id="carnes">Carnes</button>
@@ -41,6 +44,12 @@
     
 
   </section>
+
+    </main>
+
+    <section id="container-carrinho" class="hidden">
+
+    </section>
 
   <script src="js/index.js"></script>
 </body>
